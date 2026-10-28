@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donation Portal</title>
+  <link rel="stylesheet" href="bdstyle.css">
+
+  <!-- PDF certificate library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="bdscript.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1>🩸 Blood Donation Portal</h1>
+    <p>Every Drop Counts. Every Donor Matters.</p>
+  </header>
+
+  <main class="card">
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+    <p id="stepText">Step 1 of 6</p>
+
+    <form id="donorForm">
+
+      <section class="step active">
+        <h2>What is your full name?</h2>
+        <input id="name" type="text"
+          placeholder="Enter your full name" required>
+      </section>
+
+      <section class="step">
+        <h2>What is your contact number?</h2>
+        <input id="phone" type="tel"
+          placeholder="Enter 10-digit mobile number"
+          inputmode="numeric" maxlength="10"
+          pattern="[0-9]{10}"
+          title="Enter exactly 10 digits" required>
+      </section>
+
+      <section class="step">
+        <h2>What is your email address?</h2>
+        <input id="email" type="email"
+          placeholder="Enter your email" required>
+      </section>
+
+      <section class="step">
+        <h2>What is your address?</h2>
+        <textarea id="address"
+          placeholder="Enter your address"
+          rows="3" required></textarea>
+      </section>
+
+      <section class="step">
+        <h2>What is your blood group?</h2>
+        <select id="bloodGroup" required>
+          <option value="">Select blood group</option>
+          <option>A+</option>
+          <option>A-</option>
+          <option>B+</option>
+          <option>B-</option>
+          <option>AB+</option>
+          <option>AB-</option>
+          <option>O+</option>
+          <option>O-</option>
+        </select>
+      </section>
+
+      <section class="step">
+        <h2>Final confirmation</h2>
+        <p>Please check that your details are correct.</p>
+        <label class="consent">
+          <input id="consent" type="checkbox" required>
+          I confirm that the information I entered is correct.
+        </label>
+      </section>
+
+      <p id="errorMessage" role="alert"></p>
+
+      <div class="buttons">
+        <button type="button" id="backBtn" class="secondary" hidden>
+          Back
+        </button>
+        <button type="button" id="nextBtn">Next →</button>
+        <button type="submit" id="submitBtn" hidden>
+          Complete Registration
+        </button>
+      </div>
+    </form>
+
+    <section id="thankYou" hidden>
+      <div class="heart">❤️</div>
+      <h2>Thank You, <span id="donorName"></span>!</h2>
+      <p>Your donor registration demo is complete.</p>
+      <p>Blood Group: <strong id="donorGroup"></strong></p>
+      <p>Thank you for supporting the life-saving mission of blood donation.</p>
+
+      <div class="notice">
+        This is a registration appreciation certificate, not proof of an
+        actual blood donation. A real donation certificate requires
+        confirmation from an authorized blood bank.
+      </div>
+
+      <button type="button" id="downloadBtn">
+        Download PDF Certificate
+      </button>
+
+      <button type="button" id="restartBtn" class="secondary">
+        Register Another Donor
+      </button>
+    </section>
+  </main>
+
+  <footer>Blood Donation Portal | Project ID: 26BCR031</footer>
+
+</body>
+</html>

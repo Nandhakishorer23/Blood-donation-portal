@@ -1,0 +1,181 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff0f1;
+  color: #292929;
+}
+
+header {
+  background: linear-gradient(135deg, #b51225, #ed3548);
+  color: white;
+  text-align: center;
+  padding: 25px 12px;
+}
+
+header h1 {
+  margin: 0 0 10px;
+}
+
+header p {
+  margin: 0;
+}
+
+.card {
+  width: min(92%, 520px);
+  margin: 35px auto;
+  padding: 28px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 5px 22px #00000015;
+}
+
+.progress {
+  height: 8px;
+  background: #f4d5d9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progressBar {
+  height: 100%;
+  width: 16.67%;
+  background: #c71930;
+  transition: width 0.3s;
+}
+
+#stepText {
+  text-align: right;
+  color: #777;
+  font-size: 14px;
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+h2 {
+  color: #b51225;
+  font-size: 22px;
+}
+
+input:not([type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  padding: 13px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #ed3548;
+  border-color: transparent;
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+  margin: 18px 0;
+}
+
+.consent input {
+  margin-top: 4px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 13px 17px;
+  background: #c71930;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.buttons button {
+  flex: 1;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.secondary {
+  background: #555;
+}
+
+#errorMessage {
+  color: #b51225;
+  font-size: 14px;
+}
+
+#thankYou {
+  text-align: center;
+}
+
+.heart {
+  font-size: 55px;
+  animation: pulse 1s infinite alternate;
+}
+
+.notice {
+  background: #fff3cd;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 20px 0;
+}
+
+#downloadBtn,
+#restartBtn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.12); }
+}
+
+@media (max-width: 500px) {
+  .card {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+}
